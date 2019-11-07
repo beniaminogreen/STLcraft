@@ -1,0 +1,17 @@
+Package: STLcraft
+Title: Tools For Making STL Files in R
+Version: 0.0.0.1
+Authors@R:
+    person(given = "Beniamino",
+           family = "Green",
+           role = c("aut", "cre"),
+           email = "ben.green.18@ucl.ac.uk")
+Description: What the package does (one paragraph).
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports:
+    purrr (>= 0.3.2)
+Suggests: 
+    testthat
