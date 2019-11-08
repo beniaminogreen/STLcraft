@@ -1,4 +1,3 @@
-library(purrr)
 #'A function to find the cross product of an arbirtrary number of vectors
 #'
 #'@param ... a list of vectors
@@ -8,13 +7,24 @@ xprod <- function(...){
 	vectors <- list(...)
 
 	len <- unique(map_dbl(vectors,length))
-	if (length(len) != 1)
-		stop("Vectors Must be of Same Length")
+	(length(len) == 1) || stop("Vectors Must be of Same Length")
 
 	m <- invoke(rbind, vectors)
-	map_dbl(seq(len),
+	sapply(seq(len),
 		 function(i) det(m[,-i,drop=FALSE]) * (-1)^(i+1)
 		 )
+}
+
+#'A function to find the unit vector for a given vector
+#'
+#'@param ... a numeric vector
+#'@return A numeric vector
+normalize_vector<- function(vect){
+	len <- vect^2 %>%
+		sum() %>%
+		sqrt()
+	return(vect/len)
+
 }
 
 #' A function to find the vector normal to a triangle
@@ -25,13 +35,14 @@ xprod <- function(...){
 #' @param vertex_3 A triangle vertex
 #' @return A numeric vector
 find_normal<- function(vertex_1, vertex_2, vertex_3){
-	if (length(vertex_1)!= 3 | length(vertex_2)!= 3 | length(vertex_3)!= 3){
+	(length(vertex_1)== 3 & length(vertex_2)== 3 & length(vertex_3)== 3) ||
 		stop('vertexes must all have 3 points')
-	}
-	if (class(vertex_1) != 'numeric'|class(vertex_2) != 'numeric'|class(vertex_3) != 'numeric'){
+	(class(vertex_1) == 'numeric' & class(vertex_2) == 'numeric' & class(vertex_3) == 'numeric')||
 		stop('all arguments must be numeric vectors')
-	}
+
 	vert_t1 <- vertex_1 - vertex_2
 	vert_t2 <- vertex_1 - vertex_3
-	return(xprod(vert_t1, vert_t2))
+	return(normalize_vector(xprod(vert_t1, vert_t2)))
 }
+
+
