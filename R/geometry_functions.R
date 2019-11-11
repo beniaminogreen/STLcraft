@@ -5,12 +5,10 @@
 #'@export
 xprod <- function(...){
 	vectors <- list(...)
-
 	len <- unique(map_dbl(vectors,length))
 	(length(len) == 1) || stop("Vectors Must be of Same Length")
-
 	m <- invoke(rbind, vectors)
-	sapply(seq(len),
+	out <- sapply(seq(len),
 		 function(i) det(m[,-i,drop=FALSE]) * (-1)^(i+1)
 		 )
 }
@@ -20,11 +18,9 @@ xprod <- function(...){
 #'@param ... a numeric vector
 #'@return A numeric vector
 normalize_vector<- function(vect){
-	len <- vect^2 %>%
-		sum() %>%
-		sqrt()
+	is.numeric(vect) || stop('vector not numeric')
+	len <- sum(vect^2)^.5
 	return(vect/len)
-
 }
 
 #' A function to find the vector normal to a triangle
@@ -44,5 +40,4 @@ find_normal<- function(vertex_1, vertex_2, vertex_3){
 	vert_t2 <- vertex_1 - vertex_3
 	return(normalize_vector(xprod(vert_t1, vert_t2)))
 }
-
 
