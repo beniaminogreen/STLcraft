@@ -5,12 +5,15 @@
 #'@export
 xprod <- function(...){
 	vectors <- list(...)
+
 	len <- unique(map_dbl(vectors,length))
 	(length(len) == 1) || stop("Vectors Must be of Same Length")
+
 	m <- invoke(rbind, vectors)
-	out <- sapply(seq(len),
-		 function(i) det(m[,-i,drop=FALSE]) * (-1)^(i+1)
-		 )
+
+	sapply(seq(len), function(i)
+	      det(m[,-i,drop=FALSE]) * (-1)^(i+1)
+			 )
 }
 
 #'A function to find the unit vector for a given vector
