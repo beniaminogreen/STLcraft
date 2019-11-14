@@ -1,16 +1,19 @@
 setClass('STL',
-	slots = c(top_surface = 'matrix',
-		  bottom_surface = 'matrix',
-		  dimensions = 'matrix'),
+	slots = c(top = 'matrix',
+		  bot = 'matrix',
+		  size = 'numeric',
+		  color = 'character'
+		  ),
 	validity = function(object){
-		mode(object@dimensions) == 'numeric' || stop('dimensions must be a numeric matrix')
-		ncol(object@dimensions) == 3 || stop('dimensions must be of length 3')
+		length(object@size) == 3 || stop('the size must be specified in 3 dimensions')
 
-		mode(object@top_surface) == "numeric" || stop('top_surface should be a numeric matrix')
+		length(object@color) == 1 || stop('color must be a string')
 
-		mode(object@bottom_surface) == "numeric" || stop('top_surface should be a numeric matrix')
+		dim(object@top) == dim(object@bot) || stop('Top and Bottom surface must have same size')
 
+		mode(object@top) == "numeric" || stop('Top surface should be a numeric matrix')
+
+		mode(object@bot) == "numeric" || stop('Bottom surface should be a numeric matrix')
 		return(TRUE)
 	}
 )
-
