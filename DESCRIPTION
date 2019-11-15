@@ -11,7 +11,7 @@ License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Imports:
+Depends:
     purrr (>= 0.3.2)
-Suggests: 
+Suggests:
     testthat

@@ -1,4 +1,3 @@
-library(purrr)
 pass_constructor<- function(df,temp_file, ...){
 	relationships <- as.list(substitute(...()))
 	pass <- function(x,y){
@@ -98,4 +97,3 @@ write_stl<- function(df, filename){
 	walk(seq(nrow(df)-1), function(x) walk(seq(ncol(df)-1),~pass_6(x,.)))
 	write('endsolid', file=temp_file)
 }
-

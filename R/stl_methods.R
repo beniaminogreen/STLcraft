@@ -22,3 +22,5 @@ setMethod('show',
 )
 
 dim.STL <- function(object) dim(object@top)
+nrow.STL <- function(object) nrow(object@top)
+ncol.STL <- function(object) ncol(object@top)
