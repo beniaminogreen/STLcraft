@@ -11,7 +11,6 @@ setMethod('show',
 	  function(object){
 		  nrows <- nrow(object@top)
 		  ncols <- ncol(object@top)
-		  cat(sprintf('An STL with %s triangles:\n',2*(nrows+ncols+ncols*nrows)))
 		  cat(sprintf('size       : %s by %s by %s (x,y,z) \n',
 			      object@size[1], object@size[2], object@size[3]))
 		  cat(sprintf('size : %s by %s (nrow, ncol)\n',
