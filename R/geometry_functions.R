@@ -1,8 +1,7 @@
-#'A function to find the cross product of an arbirtrary number of vectors
+#' A function to find the cross product of an arbirtrary number of vectors
 #'
-#'@param ... a list of vectors
-#'@return A numeric vector
-#'@export
+#' @param ... a list of vectors
+#' @return A numeric vector
 xprod <- function(...){
 	vectors <- list(...)
 
@@ -16,10 +15,10 @@ xprod <- function(...){
 			 )
 }
 
-#'A function to find the unit vector for a given vector
+#' A function to find the unit vector for a given vector
 #'
-#'@param ... a numeric vector
-#'@return A numeric vector
+#' @param ... a numeric vector
+#' @return A numeric vector
 normalize_vector<- function(vect){
 	is.numeric(vect) || stop('vector not numeric')
 	len <- sum(vect^2)^.5

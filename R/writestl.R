@@ -11,8 +11,11 @@ write_stl<- function(STL, filename, ASCII = TRUE){
 	}
 	if (!ASCII){
 		writer <- binary_writer
+		con <- file(filename, open = 'wb')
 	} else {
 		writer <- ascii_writer
+		con <- file(filename, open = 'w')
+		write('solid', file=con)
 	}
 	scale_factor <- c(nrow(STL), ncol(STL), max(STL@top)) / STL@size
 
@@ -88,14 +91,12 @@ write_stl<- function(STL, filename, ASCII = TRUE){
 				nrow(STL), y+1 ,STL@top[nrow(STL),y+1],
 				nrow(STL), y ,  STL@top[nrow(STL),y]
 				)
-	con <- file(filename, open = 'w')
-	write('solid', file=con)
 	walk(seq(nrow(STL)-1), function(x) walk(seq(ncol(STL)-1),~pass_1(x,.)))
 	walk(seq(nrow(STL)-1), function(x) walk(seq(ncol(STL)-1),~pass_2(x,.)))
 	walk(seq(nrow(STL)-1), ~pass_3(.,1))
 	walk(seq(ncol(STL)-1), ~pass_4(1,.))
 	write('endsolid', file=con)
-	close(con, type ='w')
+	close(con)
 }
 
 ascii_writer <-  function(triangle,write_file,sf){
@@ -114,3 +115,9 @@ ascii_writer <-  function(triangle,write_file,sf){
 		) %>%
 			walk(write, write_file)
 }
+
+binary_writer<- function(triangle, write_file, sf){
+	<++>
+}
+
+<++>
