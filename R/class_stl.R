@@ -1,9 +1,9 @@
 setClass('STL',
 	slots = c(top = 'matrix',
-		  bot = 'matrix',
-		  size = 'numeric',
-		  color = 'character'
-		  ),
+		bot = 'matrix',
+		size = 'numeric',
+		color = 'character'
+		),
 	validity = function(object){
 		length(object@size) == 3 || stop('the size must be specified in 3 dimensions')
 

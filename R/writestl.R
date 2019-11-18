@@ -17,6 +17,7 @@ write_stl<- function(STL, filename, ASCII = TRUE){
 		con <- file(filename, open = 'w')
 		write('solid', file=con)
 	}
+
 	scale_factor <- c(nrow(STL), ncol(STL), max(STL@top)) / STL@size
 
 	top_constructor <- function(...){
@@ -117,7 +118,5 @@ ascii_writer <-  function(triangle,write_file,sf){
 }
 
 binary_writer<- function(triangle, write_file, sf){
-	<++>
+	NULL
 }
-
-<++>

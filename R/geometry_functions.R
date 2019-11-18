@@ -6,13 +6,13 @@ xprod <- function(...){
 	vectors <- list(...)
 
 	len <- unique(map_dbl(vectors,length))
-	(length(len) == 1) || stop("Vectors Must be of Same Length")
+		(length(len) == 1) || stop("Vectors Must be of Same Length")
 
 	m <- invoke(rbind, vectors)
 
 	sapply(seq(len), function(i)
-	      det(m[,-i,drop=FALSE]) * (-1)^(i+1)
-			 )
+		det(m[,-i,drop=FALSE]) * (-1)^(i+1)
+	)
 }
 
 #' A function to find the unit vector for a given vector
@@ -42,4 +42,3 @@ find_normal<- function(vertex_1, vertex_2, vertex_3){
 	vert_t2 <- vertex_1 - vertex_3
 	return(normalize_vector(xprod(vert_t1, vert_t2)))
 }
-
