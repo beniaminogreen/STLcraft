@@ -1,12 +1,11 @@
 # STLcraft
-An R package to write to stl files with color. Currently in Development
+An R package to write to STL files with color. Currently in development.
 ## Overview
 <++>
 ## Instalation
 The development version can be installed with:
 ``` R
-Install the development version from GitHub:
-# install.packages("devtools")
+#install.packages("devtools")
 devtools::install_github("beniaminogreen/STLcraft")
 ```
 ## Usage

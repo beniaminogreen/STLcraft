@@ -1,5 +1,5 @@
 #' Constructor function to arrange STLS
-#' @param a nemaed vecrtor of colors / STLS
+#' @param a named vector of colors / STLS
 #' @export
 Arrangement <- function(...){
 	inputs <- list(...)
@@ -9,8 +9,8 @@ Arrangement <- function(...){
 
 	new('Arrangement',
 	    STLS = inputs,
-	    dimensions = inputs[[1]]@size,
+	    size = inputs[[1]]@size,
+	    dimensions = dim(inputs[[1]]),
 	    colors = colors
 	)
 }
-

@@ -1,5 +1,5 @@
 Package: STLcraft
-Title: Tools For Making STL Files in R
+Title: Tools For Creating STL Files in R
 Version: 0.0.0.1
 Authors@R:
     person(given = "Beniamino",
@@ -12,6 +12,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 Depends:
-    purrr (>= 0.3.2)
+    purrr (>= 0.3.3)
 Suggests:
     testthat

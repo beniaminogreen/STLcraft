@@ -1,10 +1,9 @@
 #' A Fucntion to write a matrix to an STL File
 #'
 #' @param STL a STL
-#' @param filename A the name of the file to save out. A srting.
+#' @param filename the name of the file to save out. A string.
 #' @return None
 #' @export
-
 write_stl<- function(STL, filename, ASCII = TRUE){
 	if (class(filename)!='character' | length(filename) != 1){
 		stop('filename must be a string')
@@ -115,8 +114,4 @@ ascii_writer <-  function(triangle,write_file,sf){
 			sprintf('	endfacet')
 		) %>%
 			walk(write, write_file)
-}
-
-binary_writer<- function(triangle, write_file, sf){
-	NULL
 }

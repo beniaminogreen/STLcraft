@@ -1,4 +1,4 @@
-#' A function to find the cross product of an arbirtrary number of vectors
+#' A function to find the cross product of an arbitrary number of vectors
 #'
 #' @param ... a list of vectors
 #' @return A numeric vector

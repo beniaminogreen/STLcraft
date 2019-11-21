@@ -1,9 +1,10 @@
 setClass('Arrangement',
 	slots = c(STLS = 'list',
 		dimensions='numeric',
+		size = 'numeric',
 		colors = 'character'),
 	validity = function(object){
-		length(object@dimensions) == 3 || stop('dimensions must be of length 3')
+		length(object@dimensions) == 2 || stop('dimensions must be of length 3')
 		mode(object@dimensions) == 'numeric' || stop('dimensions must be numeric')
 
 		length(object@colors) <= length(object@STLS) || stop('dimensions must be of length 3')
