@@ -2,7 +2,7 @@
 % Please edit documentation in R/geometry_functions.R
 \name{xprod}
 \alias{xprod}
-\title{A function to find the cross product of an arbirtrary number of vectors}
+\title{A function to find the cross product of an arbitrary number of vectors}
 \usage{
 xprod(...)
 }
@@ -13,5 +13,5 @@ xprod(...)
 A numeric vector
 }
 \description{
-A function to find the cross product of an arbirtrary number of vectors
+A function to find the cross product of an arbitrary number of vectors
 }

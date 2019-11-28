@@ -1,6 +1,3 @@
-library(purrr)
-library('formula.tools')
-
 #' Seperate an STL into several colors / bodies by logical rules
 #'
 #' @param STL an STL object

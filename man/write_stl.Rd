@@ -9,7 +9,7 @@ write_stl(STL, filename, ASCII = TRUE)
 \arguments{
 \item{STL}{a STL}
 
-\item{filename}{A the name of the file to save out. A srting.}
+\item{filename}{the name of the file to save out. A string.}
 }
 \value{
 None

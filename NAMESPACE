@@ -3,5 +3,6 @@
 export("%>%")
 export(Arrangement)
 export(STL)
+export(case_vpartition)
 export(write_stl)
 importFrom(purrr,"%>%")

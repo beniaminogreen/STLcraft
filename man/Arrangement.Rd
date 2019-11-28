@@ -7,7 +7,7 @@
 Arrangement(...)
 }
 \arguments{
-\item{a}{nemaed vecrtor of colors / STLS}
+\item{a}{named vector of colors / STLS}
 }
 \description{
 Constructor function to arrange STLS
