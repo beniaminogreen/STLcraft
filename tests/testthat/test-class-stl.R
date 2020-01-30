@@ -7,4 +7,3 @@ test_that('SetValidity works for STLs', {
 	expect_error(STL(matrix(c(1,2,3)),matrix(c('a','b','c'))), 'Bottom surface should be a numeric matrix')
 	expect_error(STL(volcano, color = c('a','b')), 'color must be a string')
 })
-

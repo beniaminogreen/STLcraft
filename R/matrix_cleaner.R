@@ -19,3 +19,34 @@ matrix_cleaner<- function(mat){
 	}
 	output_matrix
 }
+n_neighbors <- function(x,y,mat){
+	count = 0
+	for(dx in -1:1){
+		if(x+dx>0 & x+dx<=nrow(mat)){
+			for(dy in -1:1){
+				if(y+dy>0 & y+dy<=ncol(mat)){
+					if (!is.na(mat[x+dx,y+dy]) & !(dy == 0 & dx == 0)){
+						count <- count +1
+					}
+				}
+			}
+		}
+	}
+	return(count)
+}
+neighbor_counter<- function(mat){
+	count_matrix <- matrix(0, nrow = nrow(mat), ncol = ncol(mat))
+	for (x in 1:nrow(mat)){
+		for(y in 1:ncol(mat)){
+			if(!is.na(mat[x,y])){
+				count_matrix[x,y] <- n_neighbors(x,y,mat)
+			}
+		}
+	}
+	return(count_matrix)
+}
+
+matrix(c(NA,NA,NA,12,
+	NA,NA,12,12,
+	NA,12,NA,NA),
+      nrow=3, byrow=TRUE)
