@@ -45,8 +45,3 @@ neighbor_counter<- function(mat){
 	}
 	return(count_matrix)
 }
-
-matrix(c(NA,NA,NA,12,
-	NA,NA,12,12,
-	NA,12,NA,NA),
-      nrow=3, byrow=TRUE)

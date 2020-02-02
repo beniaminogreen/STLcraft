@@ -31,10 +31,3 @@ case_vpartition<- function(STL,...){
 		}
 	return(selector) #currently returns selection matrix
 }
-b <- 2
-volcano %>%
-case_vpartition(
-	      x %%b == 0~ "blue",
-	      y %%2 == 1 & z<(y*x)  ~ "red" ,
-	      y %%2 == 1 ~ "yellow"
-)

@@ -7,7 +7,7 @@ setClass('Arrangement',
 		length(object@dimensions) == 2 || stop('dimensions must be of length 3')
 		mode(object@dimensions) == 'numeric' || stop('dimensions must be numeric')
 
-		length(object@colors) <= length(object@STLS) || stop('dimensions must be of length 3')
+		length(object@colors) <= length(object@STLS) || stop("There can't be more colors than STL's")
 
 		inherits(object@STLS, "list") || stop('STLS are not a list')
 
