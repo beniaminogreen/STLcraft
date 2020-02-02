@@ -5,10 +5,15 @@ in_bounds<- function(mat,point){
 	return(TRUE)
 }
 check_valid<- function(mat,x,y){
-	offsets <- list(c(-1,1),c(0,1),c(1,1),
-			c(1,0),c(1,-1),c(0,-1),
-			c(-1,-1),c(-1,0),c(-1,1))
-	for(i in 1:8){
+	if(is.na(mat[x,y])){
+		return(FALSE)
+	}
+	offsets <- list(c(0,1),c(1,1),c(1,0),
+			c(1,-1),c(0,-1),c(-1,-1),
+			c(-1,0),c(-1,1),c(0,1),
+			c(1,0), c(0,-1),c(-1,0),
+			c(0,1))
+	for(i in 1:12){
 		point_1<-offsets[[i]] + c(x,y)
 		point_2<-offsets[[i+1]] + c(x,y)
 		if(!in_bounds(mat,point_1) | !in_bounds(mat,point_2)){
