@@ -10,8 +10,9 @@ write_stl<- function(STL, filename, ASCII = TRUE){
 		stop('filename must be a string')
 	}
 	if (!ASCII){
-		writer <- binary_writer
-		con <- file(filename, open = 'wb')
+		#writer <- binary_writer
+		#con <- file(filename, open = 'wb')
+		invisible()
 	} else {
 		writer <- ascii_writer
 		con <- file(filename, open = 'w')

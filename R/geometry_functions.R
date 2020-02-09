@@ -15,9 +15,10 @@ xprod <- function(...){
 	)
 }
 
+
 #' A function to find the unit vector for a given vector
 #'
-#' @param vect a numeric vector
+#' @param vect A numeric vector.
 #' @return A numeric vector
 normalize_vector<- function(vect){
 	is.numeric(vect) || stop('vector not numeric')
