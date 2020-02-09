@@ -1,5 +1,5 @@
 #' Constructor function to arrange STLS
-#' @param a named vector of colors / STLS
+#' @param ... a named vector of colors / STLS
 #' @export
 Arrangement <- function(...){
 	inputs <- list(...)

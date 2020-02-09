@@ -1,6 +1,7 @@
 #' A Fucntion to write a matrix to an STL File
 #'
 #' @param STL a STL
+#' @param ASCII whether the file should be written as ASCII or not
 #' @param filename the name of the file to save out. A string.
 #' @return None
 #' @export
