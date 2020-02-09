@@ -9,7 +9,7 @@ setClass('STL',
 			stop('the size must be specified in 3 dimensions')
 		} else if(length(object@color) != 1 ){
 			stop('color must be a string')
-		} else if(dim(object@top) != dim(object@bot) ){
+		} else if(!identical(dim(object@top),dim(object@bot))){
 			stop('Top and Bottom surface must have same size')
 		} else if(mode(object@top) != "numeric" ){
 			stop('Top surface should be a numeric matrix')
