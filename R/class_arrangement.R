@@ -4,16 +4,34 @@ setClass('Arrangement',
 		size = 'numeric',
 		colors = 'character'),
 	validity = function(object){
-		length(object@dimensions) == 2 || stop('dimensions must be of length 3')
-		mode(object@dimensions) == 'numeric' || stop('dimensions must be numeric')
+		if(length(object@dimensions) != 2 ){
+			 stop('dimensions must be of length 3')
+		}
 
-		length(object@colors) <= length(object@STLS) || stop("There can't be more colors than STL's")
+		if(mode(object@dimensions) != 'numeric' ){
+			 stop('dimensions must be numeric')
+		}
 
-		inherits(object@STLS, "list") || stop('STLS are not a list')
+		if(length(object@colors) > length(object@STLS)){
+			stop("There can't be more colors than STL's")
+		}
 
-		all(object@STLS %>% map(class) == 'STL') || stop('All STLS must be of class STL')
-		length(unique(object@STLS %>% map(~.@size))) == 1  || stop('All STLs must have the same size')
-		length(unique(object@STLS %>% map(dim))) == 1 || stop('All STLs must have the same dimensions')
+		if(!inherits(object@STLS, "list") ){
+			stop('STLS are not a list')
+		}
+
+		if(!all(object@STLS %>% map(class) == 'STL')){
+			stop('All STLS must be of class STL')
+		}
+
+		if(length(unique(object@STLS %>% map(~.@size))) != 1  ){
+			stop('All STLs must have the same size')
+		}
+
+		if(length(unique(object@STLS %>% map(dim))) != 1 ){
+			stop('All STLs must have the same dimensions')
+		}
+
 
 		return(TRUE)
 	}
