@@ -1,4 +1,3 @@
-library(purrr)
 write_horizontal<- function(mat,x,y){
 	coords <- list(c(x,y), c(x+1,y), c(x+1,y+1), c(x,y+1))
 	valid_coords<-!is.na(map(coords,~mat[.[1],.[2]]))
@@ -21,12 +20,7 @@ write_horizontal<- function(mat,x,y){
 		print(append(hyp_coords,hyp_coords[2]))
 		#top, bottom, bottom
 		print(append(hyp_coords,hyp_coords[1]))
-	} else {
-		#do nothing
 	}
-}
-write_vertical<- function(x,y,mat){
-
 }
 
 
