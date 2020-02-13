@@ -15,7 +15,7 @@ setMethod('show',
 			      object@size[1], object@size[2], object@size[3]))
 		  cat(sprintf('size : %s by %s (nrow, ncol)\n',
 			      nrows, ncols))
-		  cat(sprintf('values     : %s, %s (max, min\n)',
+		  cat(sprintf('values     : %s, %s (max, min) \n',
 			      max(object@top),min(object@top)))
 	}
 )
