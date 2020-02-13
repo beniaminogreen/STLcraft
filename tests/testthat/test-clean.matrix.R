@@ -24,7 +24,7 @@ test_that('matrix_cleaner gives right answers', {
 			 NA, NA, 2, NA,
 			 NA, 2, 2, NA,
 			3, 3, NA, NA) , byrow = 3, nrow = 4)
-
+	#
 	  expect_true(identical(matrix_cleaner(test_1), test_1_result))
 	  expect_true(identical(matrix_cleaner(test_2), test_2_result))
 	  expect_true(identical(matrix_cleaner(test_3), test_3_result))
