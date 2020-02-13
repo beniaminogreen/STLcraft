@@ -16,14 +16,13 @@ case_vpartition<- function(STL,...){
 	selector <- matrix('NA', nrow = nrow(STL), ncol = ncol(STL))
 	enclos <- parent.frame()
 
-	for(x in seq(nrow(STL))){
-		for(y in seq(ncol(STL))){
-			z <- top <- STL[x,y]
-			#bot <- STL[x,y]
+	for(x in seq(ncol(STL))){
+		for(y in seq(nrow(STL))){
+			z <- top <- STL[y,x]
 			for(form in formulas){
 				result <- eval(form[[2]], enclos = enclos )
 				if(result){
-					selector[x,y] <- eval(form[[3]], enclos=enclos)
+					selector[y,x] <- eval(form[[3]], enclos=enclos)
 					break
 				}
 			}

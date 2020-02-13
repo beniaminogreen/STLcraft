@@ -10,6 +10,8 @@ write_stl(STL, filename, ASCII = TRUE)
 \item{STL}{a STL}
 
 \item{filename}{the name of the file to save out. A string.}
+
+\item{ASCII}{whether the file should be written as ASCII or not}
 }
 \value{
 None
