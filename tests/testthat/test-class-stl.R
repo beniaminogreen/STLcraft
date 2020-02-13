@@ -10,8 +10,8 @@ test_that('SetValidity works for STLs', {
 })
 test_that('STL nrow/ncol/dim methods work', {
 	stl_1 <- STL(volcano)
-	expect_equal(nrow(stl_1), nrow(volcano))
-	expect_equal(ncol(stl_1), ncol(volcano))
+	expect_equal(nrow(stl_1), 87)
+	expect_equal(ncol(stl_1), 61)
 	expect_equal(dim(stl_1), dim(volcano))
 })
 test_that('show_stl works',{
