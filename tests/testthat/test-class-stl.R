@@ -1,4 +1,5 @@
 context('class STL tests')
+setup({data(volcano)})
 test_that('SetValidity works for STLs', {
 	expect_error(STL(volcano, volcano, 1), 'the size must be specified in 3 dimensions')
 	expect_error(STL(volcano, volcano +1), 'Bottom surface may never be above top surface')
@@ -8,7 +9,7 @@ test_that('SetValidity works for STLs', {
 	expect_error(STL(volcano, color = c('a','b')), 'color must be a string')
 })
 test_that('STL nrow/ncol/dim methods work', {
-	stl_1 <- STL(volcano,volcano)
+	stl_1 <- STL(volcano)
 	expect_equal(nrow(stl_1), nrow(volcano))
 	expect_equal(ncol(stl_1), ncol(volcano))
 	expect_equal(dim(stl_1), dim(volcano))
