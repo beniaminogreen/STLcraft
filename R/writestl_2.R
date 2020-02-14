@@ -23,4 +23,17 @@ write_horizontal<- function(mat,x,y){
 	}
 }
 
+write_triangle <-  function(point_1,point_2,point_3,write_file){
+		normal <- find_normal(point_1, point_2, point_3)
+		write(sprintf('	facet normal %e %e %e',normal[1],normal[2],normal[1]),write_file)
+		write(sprintf('		outer loop'),write_file)
+		write(sprintf('			vertex %e %e %e',
+			point_1[1],point_1[2],point_1[3]), write_file)
+		write(sprintf('			vertex %e %e %e',
+			point_2[1],point_2[2],point_2[3]), write_file)
+		write(sprintf('			vertex %e %e %e',
+			point_3[1],point_3[2],point_3[3]), write_file)
+		write(sprintf('		endloop'),write_file)
+		write(sprintf('	endfacet'),write_file)
+}
 
