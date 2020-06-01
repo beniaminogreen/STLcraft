@@ -1,7 +1,7 @@
 # STLcraft
 [![Build Status](https://travis-ci.com/beniaminogreen/STLcraft.svg?branch=master)](https://travis-ci.com/beniaminogreen/STLcraft)
 ![Codecov](https://img.shields.io/codecov/c/github/beniaminogreen/STLcraft)
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
 An R package to write to STL files with color. Currently in development.
 ## Overview
